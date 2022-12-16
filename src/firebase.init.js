@@ -11,7 +11,7 @@ const firebaseConfig = {
   projectId: "autism-32725",
   storageBucket: "autism-32725.appspot.com",
   messagingSenderId: "203259896312",
-  appId: "1:203259896312:web:05f5b2cdd7aa02e37cf60d"
+  appId: "1:203259896312:web:05f5b2cdd7aa02e37cf60d",
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

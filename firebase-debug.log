@@ -1,0 +1,206 @@
+[debug] [2022-12-02T11:48:59.078Z] ----------------------------------------------------------------------
+[debug] [2022-12-02T11:48:59.082Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-12-02T11:48:59.084Z] CLI Version:   11.16.1
+[debug] [2022-12-02T11:48:59.084Z] Platform:      win32
+[debug] [2022-12-02T11:48:59.084Z] Node Version:  v17.8.0
+[debug] [2022-12-02T11:48:59.085Z] Time:          Fri Dec 02 2022 17:48:59 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-02T11:48:59.086Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-02T11:48:59.228Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-02T11:48:59.228Z] > authorizing via signed-in user (mohsinkabirseo@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\project\autism-frontend
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-12-02T11:50:44.780Z] Using project from CLI flag: autism-32725
+[debug] [2022-12-02T11:50:44.784Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 [none]
+[debug] [2022-12-02T11:50:45.551Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 403
+[debug] [2022-12-02T11:50:45.552Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-12-02T11:50:45.552Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-12-02T11:50:45.896Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project autism-32725. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-02T11:51:01.615Z] ----------------------------------------------------------------------
+[debug] [2022-12-02T11:51:01.618Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-12-02T11:51:01.619Z] CLI Version:   11.16.1
+[debug] [2022-12-02T11:51:01.619Z] Platform:      win32
+[debug] [2022-12-02T11:51:01.619Z] Node Version:  v17.8.0
+[debug] [2022-12-02T11:51:01.620Z] Time:          Fri Dec 02 2022 17:51:01 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-02T11:51:01.621Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-02T11:51:01.730Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-02T11:51:01.731Z] > authorizing via signed-in user (mohsinkabirseo@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\project\autism-frontend
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-12-02T11:51:29.306Z] Using project from CLI flag: autism-32725
+[debug] [2022-12-02T11:51:29.310Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 [none]
+[debug] [2022-12-02T11:51:30.135Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 403
+[debug] [2022-12-02T11:51:30.136Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-12-02T11:51:30.136Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-12-02T11:51:30.488Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project autism-32725. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-02T11:52:00.779Z] ----------------------------------------------------------------------
+[debug] [2022-12-02T11:52:00.784Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-12-02T11:52:00.786Z] CLI Version:   11.16.1
+[debug] [2022-12-02T11:52:00.786Z] Platform:      win32
+[debug] [2022-12-02T11:52:00.786Z] Node Version:  v17.8.0
+[debug] [2022-12-02T11:52:00.788Z] Time:          Fri Dec 02 2022 17:52:00 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-02T11:52:00.788Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-02T11:52:00.949Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-02T11:52:00.950Z] > authorizing via signed-in user (mohsinkabirseo@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\project\autism-frontend
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-12-02T11:52:10.622Z] Using project from CLI flag: autism-32725
+[debug] [2022-12-02T11:52:10.626Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 [none]
+[debug] [2022-12-02T11:52:11.471Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 403
+[debug] [2022-12-02T11:52:11.471Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-12-02T11:52:11.472Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-12-02T11:52:11.797Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project autism-32725. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-02T11:52:34.852Z] ----------------------------------------------------------------------
+[debug] [2022-12-02T11:52:34.855Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-12-02T11:52:34.856Z] CLI Version:   11.16.1
+[debug] [2022-12-02T11:52:34.856Z] Platform:      win32
+[debug] [2022-12-02T11:52:34.856Z] Node Version:  v17.8.0
+[debug] [2022-12-02T11:52:34.857Z] Time:          Fri Dec 02 2022 17:52:34 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-02T11:52:34.858Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-02T11:52:34.968Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-02T11:52:34.969Z] > authorizing via signed-in user (mohsinkabirseo@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\project\autism-frontend
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-12-02T11:52:49.476Z] Using project from CLI flag: autism-32725
+[debug] [2022-12-02T11:52:49.480Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 [none]
+[debug] [2022-12-02T11:52:50.348Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 403
+[debug] [2022-12-02T11:52:50.348Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-12-02T11:52:50.349Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-12-02T11:52:50.686Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project autism-32725. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-02T11:57:06.769Z] ----------------------------------------------------------------------
+[debug] [2022-12-02T11:57:06.773Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-02T11:57:06.774Z] CLI Version:   11.16.1
+[debug] [2022-12-02T11:57:06.774Z] Platform:      win32
+[debug] [2022-12-02T11:57:06.774Z] Node Version:  v17.8.0
+[debug] [2022-12-02T11:57:06.776Z] Time:          Fri Dec 02 2022 17:57:06 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-02T11:57:06.777Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-02T11:57:06.923Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-02T11:57:06.924Z] > authorizing via signed-in user (mohsinkabirseo@gmail.com)
+[debug] [2022-12-02T11:57:06.924Z] [iam] checking project autism-32725 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-02T11:57:06.929Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/autism-32725:testIamPermissions [none]
+[debug] [2022-12-02T11:57:06.930Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/autism-32725:testIamPermissions x-goog-quota-user=projects/autism-32725
+[debug] [2022-12-02T11:57:06.931Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/autism-32725:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-02T11:57:08.976Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/autism-32725:testIamPermissions 200
+[debug] [2022-12-02T11:57:08.976Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/autism-32725:testIamPermissions {}
+[debug] [2022-12-02T11:57:08.977Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project autism-32725:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2022-12-02T11:57:08.979Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 [none]
+[debug] [2022-12-02T11:57:09.747Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 403
+[debug] [2022-12-02T11:57:09.747Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/autism-32725 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-12-02T11:57:09.749Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-12-02T11:57:10.089Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\kabir\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project autism-32725. Please make sure the project exists and your account has permission to access it.

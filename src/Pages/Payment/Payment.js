@@ -5,11 +5,13 @@ const Payment = () => {
     event.preventDefault();
     const info = {
       name: event.target.name.value,
+      email: event.target.email.value,
+      mobile: event.target.mobile.value,
       amount: event.target.amount.value,
     };
     // const email = user?.email;
 
-    fetch("http://localhost:5000/sslrequest", {
+    fetch("https://autism-backend-production.up.railway.app/sslrequest", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -24,7 +26,7 @@ const Payment = () => {
       });
   };
   return (
-    <div className="mt-8 mb-8 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 place-content-center mx-auto w-full h-screen">
+    <div className="mt-8 mb-8 flex justify-center place-content-center w-full h-screen items-center mx-auto">
       <div className="w-full">
         <h2 className="text-2xl font-bold text-center  dark:text-gray-100">
           Recharge
@@ -43,6 +45,34 @@ const Payment = () => {
             <input
               type="text"
               name="name"
+              placeholder="Enter Your Full Name"
+              className="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              required
+            />
+          </div>
+          <div className="form-control w-full max-w-xs">
+            <label className="label">
+              <span className="label-text font-bold dark:text-white">
+                Email
+              </span>
+            </label>
+            <input
+              type="text"
+              name="email"
+              placeholder="Enter Your Email"
+              className="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              required
+            />
+          </div>
+          <div className="form-control w-full max-w-xs">
+            <label className="label">
+              <span className="label-text font-bold dark:text-white">
+                Phone Number
+              </span>
+            </label>
+            <input
+              type="text"
+              name="mobile"
               placeholder="Enter Your Full Name"
               className="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               required

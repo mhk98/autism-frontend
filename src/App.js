@@ -10,11 +10,15 @@ import Comments from "./comments/Comments";
 import Blog from "./Pages/Blog/Blog";
 import Contact from "./Pages/Contact/Contact";
 import RequireAuth from "./Pages/Login/RequireAuth";
-import Purchasedetails from "./Pages/Course/Purchasedetails";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import Head from "./Pages/Shared/Head/Head";
 import Course from "./Pages/Course/Course";
 import Payment from "./Pages/Payment/Payment";
 import PaymentSuccess from "./Pages/PaymentSuccess/PaymentSuccess";
+import PaymentFailed from "./Pages/PaymentFailed/PaymentFailed";
+import Profiles from "./Pages/Profiles/Profiles";
+import Profile from "./Pages/Profiles/Profile";
 
 function App() {
   return (
@@ -25,9 +29,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/profile" element={<Profiles />} />
         <Route
           path="/paymentsuccess/:transactionId"
           element={<PaymentSuccess />}
+        />
+        <Route
+          path="/paymentfailed/:transactionId"
+          element={<PaymentFailed />}
         />
         <Route
           path="/allcourse"
@@ -37,14 +46,14 @@ function App() {
             </RequireAuth>
           }
         />
-        <Route
+        {/* <Route
           path="Purchase/:_id"
           element={
             <RequireAuth>
               <Purchasedetails></Purchasedetails>
             </RequireAuth>
           }
-        />
+        /> */}
         <Route path="blog" element={<Blog></Blog>} />
         <Route
           path="forum"
@@ -62,6 +71,7 @@ function App() {
         <Route path="login" element={<Login></Login>} />
         <Route path="signup" element={<Signup></Signup>} />
       </Routes>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
