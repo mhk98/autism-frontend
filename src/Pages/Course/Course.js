@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Payment from "../Payment/Payment";
 import Coursedetails from "./Coursedetails";
 const Course = () => {
   const [courses, setCourse] = useState([]);

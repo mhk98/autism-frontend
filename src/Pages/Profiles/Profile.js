@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Profile = ({ profile }) => {
-  //   console.log(profile);
+  const { coursePrice } = useParams();
+  console.log(coursePrice);
   const { name, expertise, description } = profile;
   return (
     <div className="card w-96 bg-base-100 shadow-xl mb-12">
@@ -13,7 +14,7 @@ const Profile = ({ profile }) => {
         </p>
         <span className="font-bold">About {name}</span>
         <p>{description}</p>
-        <Link to="/payment">
+        <Link to={`/payment/${coursePrice}`}>
           <button className="btn">Booked</button>
         </Link>
       </div>

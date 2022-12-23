@@ -19,6 +19,7 @@ import PaymentSuccess from "./Pages/PaymentSuccess/PaymentSuccess";
 import PaymentFailed from "./Pages/PaymentFailed/PaymentFailed";
 import Profiles from "./Pages/Profiles/Profiles";
 import Profile from "./Pages/Profiles/Profile";
+import MainScreen from "./screens/MainScreen";
 
 function App() {
   return (
@@ -28,8 +29,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/profile" element={<Profiles />} />
+        <Route path="/payment/:coursePrice" element={<Payment />} />
+        <Route path="/profile/:coursePrice" element={<Profiles />} />
         <Route
           path="/paymentsuccess/:transactionId"
           element={<PaymentSuccess />}
@@ -64,7 +65,7 @@ function App() {
             ></Comments>
           }
         />
-        <Route path="conference" element={<Conference></Conference>} />
+        <Route path="conference" element={<MainScreen></MainScreen>} />
 
         <Route path="contact" element={<Contact></Contact>} />
 

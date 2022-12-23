@@ -30,7 +30,10 @@ const Comment = ({
   return (
     <div key={comment.id} className="comment">
       <div className="comment-image-container">
-        <img style={{ width: "50px" }} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpgX-TMnMpzB1BPKuPzMoSBfYMljIE_hhU-A&usqp=CAU" />
+        <img
+          style={{ width: "50px" }}
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpgX-TMnMpzB1BPKuPzMoSBfYMljIE_hhU-A&usqp=CAU"
+        />
       </div>
       <div className="comment-right-part">
         <div className="comment-content">

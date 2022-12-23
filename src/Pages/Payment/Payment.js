@@ -1,6 +1,8 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 const Payment = () => {
+  const { coursePrice } = useParams();
   const handleCheckout = (event) => {
     event.preventDefault();
     const info = {
@@ -87,6 +89,7 @@ const Payment = () => {
             <input
               type="text"
               name="amount"
+              value={coursePrice}
               placeholder="Enter Your Amount"
               className="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               required

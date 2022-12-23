@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Payment from "../Payment/Payment";
 import "./Course.css";
 const Coursedetails = ({ tool }) => {
+  const navigate = useNavigate();
   const {
     _id,
     courseName,
@@ -12,6 +14,7 @@ const Coursedetails = ({ tool }) => {
     image,
     code,
   } = tool;
+  localStorage.setItem("coursePrice", coursePrice);
   return (
     <div class="card lg:max-w-lg bg-base-100 shadow-xl">
       <div class="card-body text-center">
@@ -29,7 +32,7 @@ const Coursedetails = ({ tool }) => {
           price :{coursePrice} <span>BDT</span>
         </p>
         <p class=" font-bold text-secondary">code : {code}</p>
-        <Link to="/profile" className="btn btn-success">
+        <Link to={`/profile/${coursePrice}`} className="btn btn-success">
           Purchuse
         </Link>
       </div>
