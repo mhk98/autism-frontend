@@ -6,16 +6,16 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBhK3MzGxVT_cEZF0Eg1b-c4cij1Ltf5ek",
-  authDomain: "autism-32725.firebaseapp.com",
-  projectId: "autism-32725",
-  storageBucket: "autism-32725.appspot.com",
-  messagingSenderId: "203259896312",
-  appId: "1:203259896312:web:05f5b2cdd7aa02e37cf60d",
+  apiKey: "AIzaSyBVaZ5HF005mLgUYltMv2Opb3hWwuAUIrQ",
+  authDomain: "autism-care-43c6d.firebaseapp.com",
+  projectId: "autism-care-43c6d",
+  storageBucket: "autism-care-43c6d.appspot.com",
+  messagingSenderId: "373300175418",
+  appId: "1:373300175418:web:7970f47be2b61994c44b03",
 };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 const auth = getAuth(app);
 
 export default auth;

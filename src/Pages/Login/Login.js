@@ -1,15 +1,20 @@
-import axios from "axios";
-import React, { useEffect } from "react";
+// import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+// import { useForm } from "react-hook-form";
+// import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+// import Loading from "../Shared/Loading";
+// import { Link, useLocation, useNavigate } from "react-router-dom";
+// import useToken from "../../hooks/useToken";
+// import auth from "../../firebase.init";
+
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import auth from "../../firebase.init";
-
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Loading from "../Shared/Loading/Loading";
-import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import Loading from "../../Loading";
+
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const {
@@ -17,194 +22,126 @@ const Login = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const [
-    signInWithEmailAndPassword,
-    // user,
-    loading,
-    error,
-  ] = useSignInWithEmailAndPassword(auth);
-  const [user] = useAuthState(auth);
-  console.log(user);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+
   let signInError;
   const navigate = useNavigate();
   const location = useLocation();
-  let from = location.state?.from?.pathname || "/";
+  // const [token] = useToken(user || gUser);
+  // let from = location.state?.from?.pathname || "/";
 
-  console.log("🚀 ~ file: Login.js ~ line 47 ~ useEffect ~ user", user);
+  const from = location.state?.from?.pathname || "/";
 
-  useEffect(() => {
-    const saveData = (method, data) => {
-      fetch("https://autism-backend-production.up.railway.app/users", {
-        method,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("🚀 ~ file: Login.js ~ line 41 ~ useEffect ~ data", data);
-          navigate(from, { replace: true });
-        });
-    };
+  if (user || gUser) {
+    navigate(from, { replace: true });
+  }
 
-    if (user) {
-      console.log("🚀 ~ file: Login.js ~ line 47 ~ useEffect ~ user", user);
-      axios
-        .get(
-          `https://autism-backend-production.up.railway.app/users/${user.email}`
-        )
-        .then((res) => {
-          console.log(res);
-          if (res.data.email === user.email) return;
-          const data = {
-            email: user.email,
-            courses: [],
-          };
-          saveData("PUT", data);
-        });
-    }
-
-    if (gUser) {
-      console.log(
-        "🚀 ~ file: Login.js ~ line 54 ~ useEffect ~ gUser",
-        gUser.user.email
-      );
-
-      axios
-        .get(
-          `https://autism-backend-production.up.railway.app/users/${gUser.user.email}`
-        )
-        .then((res) => {
-          if (res.data.email === gUser.user.email) return;
-
-          const data = {
-            email: gUser.user.email,
-            courses: [],
-          };
-          saveData("PUT", data);
-        });
-    }
-  }, [user, gUser, navigate, from]);
-
-  //work for email pass ueser
-
-  if (loading || gLoading) {
+  if (gLoading || loading) {
     return <Loading></Loading>;
   }
 
   if (error || gError) {
-    signInError = (
-      <p className="text-red-500">
-        <small>{error?.message || gError?.message}</small>
-      </p>
-    );
+    signInError = <p>{error.message || gError.message}</p>;
   }
-  if (gUser) {
-    navigate("/allcourse");
-  }
-  const onSubmit = (data) => {
-    // console.log(email);
-    signInWithEmailAndPassword(data.email, data.password);
 
-    navigate("/allcourse");
+  const onSubmit = (data) => {
+    signInWithEmailAndPassword(data.email, data.password);
   };
 
   return (
-    <div>
-      <div className="flex h-screen justify-center items-center">
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <div className="card-body">
-            <h2 className="text-center text-2xl font-bold">Login</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="form-control w-full max-w-xs">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="input input-bordered w-full max-w-xs"
-                  {...register("email", {
-                    required: {
-                      value: true,
-                      message: "Email is Required",
-                    },
-                    pattern: {
-                      value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                      message: "Provide a valid Email",
-                    },
-                  })}
-                />
-                <label className="label">
-                  {errors.email?.type === "required" && (
-                    <span className="label-text-alt text-red-500">
-                      {errors.email.message}
-                    </span>
-                  )}
-                  {errors.email?.type === "pattern" && (
-                    <span className="label-text-alt text-red-500">
-                      {errors.email.message}
-                    </span>
-                  )}
-                </label>
-              </div>
-              <div className="form-control w-full max-w-xs">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  className="input input-bordered w-full max-w-xs"
-                  {...register("password", {
-                    required: {
-                      value: true,
-                      message: "Password is Required",
-                    },
-                    minLength: {
-                      value: 6,
-                      message: "Must be 6 characters or longer",
-                    },
-                  })}
-                />
-                <label className="label">
-                  {errors.password?.type === "required" && (
-                    <span className="label-text-alt text-red-500">
-                      {errors.password.message}
-                    </span>
-                  )}
-                  {errors.password?.type === "minLength" && (
-                    <span className="label-text-alt text-red-500">
-                      {errors.password.message}
-                    </span>
-                  )}
-                </label>
-              </div>
-
-              {signInError}
+    <div className="flex h-screen justify-center items-center">
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card-body">
+          <h2 className="text-center text-2xl font-bold">Login</h2>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
               <input
-                className="btn w-full max-w-xs text-white"
-                type="submit"
-                value="Login"
-              ></input>
-            </form>
-            <p>
-              <small>
-                New to Autism care{" "}
-                <Link className="text-primary" to="/signup">
-                  Create New Account
-                </Link>
-              </small>
-            </p>
-            <div className="divider">OR</div>
-            <button
-              onClick={() => signInWithGoogle()}
-              className="btn btn-outline"
-            >
-              Continue with Google
-            </button>
-          </div>
+                type="email"
+                placeholder="Your Email"
+                className="input input-bordered w-full max-w-xs"
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: "Email is required",
+                  },
+
+                  pattern: {
+                    value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                    message: "Provide a valid Email",
+                  },
+                })}
+              />
+              <label className="label">
+                {errors.email?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.email.message}
+                  </span>
+                )}
+                {errors.email?.type === "pattern" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.email.message}
+                  </span>
+                )}
+              </label>
+            </div>
+
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Your Password"
+                className="input input-bordered w-full max-w-xs"
+                {...register("password", {
+                  required: {
+                    value: true,
+                    message: "Password is required",
+                  },
+
+                  minLength: {
+                    value: 8,
+                    message: "Please enter 8 characters or longer",
+                  },
+                })}
+              />
+              <label className="label">
+                {errors.password?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.password.message}
+                  </span>
+                )}
+                {errors.password?.type === "minLength" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.password.message}
+                  </span>
+                )}
+              </label>
+            </div>
+            <p className="text-red-500">{signInError}</p>
+            <input
+              className="w-full max-w-xs btn"
+              type="submit"
+              value="Login"
+            />
+          </form>
+          <p>
+            New to X Computer Manufacture House?{" "}
+            <Link className="text-secondary" to="/signup">
+              Create New Account
+            </Link>{" "}
+          </p>
+          <div className="divider">OR</div>
+          <button
+            onClick={() => signInWithGoogle()}
+            className="btn btn-outline"
+          >
+            Continue With Google
+          </button>
         </div>
       </div>
     </div>
