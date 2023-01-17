@@ -7,7 +7,7 @@ const Modules = () => {
   const { id } = useParams();
   console.log(id);
   const [modules, setModules] = useState([]);
-  console.log("modules", modules);
+  console.log("modules", modules.img);
   fetch(`http://localhost:5000/module/${id}`)
     .then((res) => res.json())
     .then((data) => setModules(data));
@@ -73,7 +73,7 @@ const Modules = () => {
       </div>
 
       <div className="card lg:card-side bg-base-100 shadow p-4 gap-8 w-full">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 w-96">
           {/* <figure> */}
           <img className="h-56" src={modules.img} alt="Album" />
           {/* </figure> */}
@@ -85,7 +85,7 @@ const Modules = () => {
             View Profile
           </Link>
         </div>
-        <div className="card-body">
+        <div className="card-body w-full">
           <h2 className="text-xl font-bold">What you'll learn</h2>
           <li>{modules.parta}</li>
           <li>{modules.partb}</li>
