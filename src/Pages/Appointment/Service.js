@@ -1,11 +1,11 @@
 import React from "react";
 
 const Service = ({ service, setTreatment }) => {
-  const { name, slots, price } = service;
+  const { name, slots, price, venue, description } = service;
   // console.log("service", service);
   // console.log(name, slots, price, moduleid);
 
-  // console.log('moduleid', moduleid)
+  console.log("service", service);
   return (
     <div className="card lg:max-w-lg bg-base-100 shadow-xl">
       <div className="card-body text-center">
@@ -19,10 +19,18 @@ const Service = ({ service, setTreatment }) => {
           )}
         </p>
         <p>
+          <span className="font-bold">Description:</span> {description}
+        </p>
+        <p>
           {slots.length} {slots.length > 1 ? "seats" : "seat"} available
         </p>
         <p>
-          <small>Price: {price} Taka</small>
+          <span className="font-bold">Venue:</span> {venue}
+        </p>
+        <p>
+          <small>
+            <span className="font-bold">Price:</span> {price} Taka
+          </small>
         </p>
         <div className="card-actions justify-center">
           <label

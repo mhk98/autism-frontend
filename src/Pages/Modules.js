@@ -77,7 +77,7 @@ const Modules = () => {
           {/* <figure> */}
           <img className="h-56" src={modules.img} alt="Album" />
           {/* </figure> */}
-
+          <h3 className="text-xl">{modules.name}</h3>
           <Link
             to={`/doctorprofile/${modules.profileid}`}
             className="btn my-4 bg-[#0FCEE6] border-none text-white"

@@ -35,6 +35,7 @@ import Posts from "./Pages/Forum/Posts";
 import Profile from "./Pages/Profiles/Profile";
 import Modules from "./Pages/Modules";
 import DoctorProfile from "./Pages/DoctorProfile";
+import Chatbot from "./Pages/Chatbot/Chatbot";
 
 function App() {
   return (
@@ -84,6 +85,7 @@ function App() {
         <Route path="conference" element={<MainScreen></MainScreen>} />
 
         <Route path="contact" element={<Contact></Contact>} />
+        <Route path="chatbot" element={<Chatbot></Chatbot>} />
 
         {/* <Route path="about" element={<About />} /> */}
         <Route

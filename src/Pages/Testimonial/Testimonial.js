@@ -39,7 +39,7 @@ const Testimonial = () => {
           <h4 className="text-xl text-primary font-bold text-center  mar">
             Testimonials
           </h4>
-          <h2 className="text-3xl text-center mar ">What our Patients say</h2>
+          <h2 className="text-3xl text-center mar ">What our Parents say</h2>
         </div>
         <div>
           <img src={quote} className="w-24 lg:w-48" alt="" />
