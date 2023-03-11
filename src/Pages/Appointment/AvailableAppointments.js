@@ -9,6 +9,7 @@ const AvailableAppointments = ({ date }) => {
   const [treatment, setTreatment] = useState(null);
 
   const formattedDate = format(date, "PP");
+
   const {
     data: services,
     isLoading,
